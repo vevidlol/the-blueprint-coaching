@@ -292,6 +292,16 @@ body.light-theme .scroll-progress-bar {
     .scroll-progress-bar {
         box-shadow: 0 0 8px rgba(255, 107, 53, 0.4);
     }
+    
+    .theme-toggle {
+        margin-right: 0.5rem !important;
+    }
+    
+    .mui-icon-button {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 0.9rem !important;
+    }
 }
 
 /* Theme Variables */
@@ -484,7 +494,7 @@ textarea::-webkit-scrollbar-thumb:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -504,7 +514,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 .loading-logo .logo-text {
     font-size: 2rem;
     font-weight: 900;
-    color: #fff;
+    color: var(--text-primary);
     letter-spacing: 3px;
     display: block;
 }
@@ -1095,7 +1105,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 /* Transformation Journey Section */
 .testimonials {
     padding: 6rem 0;
-    background: #111;
+    background: var(--bg-secondary);
 }
 
 .transformation-timeline {
@@ -1106,10 +1116,10 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .timeline-item {
-    background: #1a1a1a;
+    background: var(--bg-tertiary);
     border-radius: 20px;
     overflow: hidden;
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
     position: relative;
 }
@@ -1157,14 +1167,14 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .timeline-content h3 {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
 .timeline-content p {
-    color: #ccc;
+    color: var(--text-secondary);
     line-height: 1.6;
     font-size: 1rem;
 }
@@ -1208,7 +1218,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 /* FAQ Section */
 .faq {
     padding: 6rem 0;
-    background: #000;
+    background: var(--bg-primary);
 }
 
 .faq-grid {
@@ -1217,7 +1227,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .faq-item {
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     margin-bottom: 1rem;
     overflow: hidden;
@@ -1230,7 +1240,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 
 .faq-question {
     padding: 1.5rem;
-    background: #1a1a1a;
+    background: var(--bg-tertiary);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -1239,11 +1249,11 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .faq-question:hover {
-    background: #222;
+    background: var(--card-bg);
 }
 
 .faq-question h3 {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0;
@@ -1263,7 +1273,7 @@ textarea::-webkit-scrollbar-thumb:hover {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
-    background: #111;
+    background: var(--bg-secondary);
 }
 
 .faq-item.active .faq-answer {
@@ -1272,7 +1282,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .faq-answer p {
-    color: #ccc;
+    color: var(--text-secondary);
     line-height: 1.6;
     margin: 0;
 }
@@ -1324,9 +1334,9 @@ textarea::-webkit-scrollbar-thumb:hover {
 
 /* Footer */
 .footer {
-    background: #000;
+    background: var(--bg-primary);
     padding: 3rem 0 1rem;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
@@ -1337,7 +1347,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .footer-brand h3 {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 1.5rem;
     font-weight: 900;
     margin-bottom: 0.5rem;
@@ -1351,7 +1361,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .footer-brand p {
-    color: #ccc;
+    color: var(--text-secondary);
     line-height: 1.6;
     max-width: 300px;
     margin-bottom: 1.5rem;

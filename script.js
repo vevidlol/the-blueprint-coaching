@@ -712,14 +712,18 @@ document.addEventListener('keydown', function(e) {
 let touchStartX = 0;
 let touchEndX = 0;
 
-document.getElementById('gallery-modal').addEventListener('touchstart', function(e) {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-document.getElementById('gallery-modal').addEventListener('touchend', function(e) {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
+// Touch/swipe support for mobile gallery - with null check
+const galleryModal = document.getElementById('gallery-modal');
+if (galleryModal) {
+    galleryModal.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    galleryModal.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+}
 
 function handleSwipe() {
     const swipeThreshold = 50;
