@@ -75,10 +75,10 @@ const CONFIG = {
     // About Section
     about: {
         story: [
-            "Growing up, challenges always seemed out of my control. I found reasons in genetics and environment for every setback. But everything changed at 17 when I realized ownership was the key to transformation.",
-            "From that point forward, I made a promise: no more excuses, just relentless progress. Three years later, real results prove what drive and structure can achieve.",
-            "Strength isn't just physical for me, it's rooted in honesty and a no-nonsense approach. I won't pretend to know what I don't. By dialing in nutrition, discipline, and absolute effort, I unlocked my genetic potential.",
-            "Now, with THE BLUEPRINT COACHING, it's time to share the formula for true change. Let's build strength, resilience, and results. One blueprint at a time."
+            "Growing up, I was always looked at differently when I played sports and was around kids my age. I was always the short, skinny kid. It felt like it was out of my control until I realized that it wasn't.",
+            "From that point forward, I knew I was going to make a change in my appearance for myself—one that gave me respect and that I was happy with. It wasn't just picking up some weights and calling it done. I spent hours on research, learning about proper nutrition, how muscles work, and slowly started to change.",
+            "The gym is just a room with weights, but when you have the right people around you and start seeing a difference in your physique, it feels like every area of your life starts to change.",
+            "I unlocked my potential. Now let's unlock yours."
         ]
     },
 
