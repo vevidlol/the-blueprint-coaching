@@ -14,8 +14,8 @@ const CONFIG = {
     // Contact Information
     contact: {
         email: "hello@theblueprintcoaching.com",
-        calendlyUrl: "https://calendly.com/nunopmanagement/health",
-        applicationFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeqLyqzCKH51d_WR-y-sFKJhsWgSS_c1hzYjXJ4AW9NBE0aVQ/viewform?usp=header",
+        calendlyUrl: "https://calendly.com/cashnunez",
+        applicationFormUrl: "https://forms.gle/upFbVivnjwgBoxoR8",
         responseTime: "Response within 24 hours",
         availability: "Available via booking only"
     },
