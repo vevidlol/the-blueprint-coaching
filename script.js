@@ -720,13 +720,16 @@ if (galleryModal) {
     });
 }
 
-// Before/After slider functionality
+// Enhanced Before/After slider functionality
 function initBeforeAfterSlider() {
     const container = document.getElementById('beforeAfter');
     const slider = document.getElementById('baSlider');
     const handle = document.getElementById('baHandle');
     const afterImg = document.querySelector('.after-img');
+    const instruction = document.getElementById('baInstruction');
     if (!container || !slider || !handle || !afterImg) return;
+
+    let hasInteracted = false;
 
     function setClip(percent) {
         // percent is 0..100; clip-path inset(top right bottom left)
@@ -735,20 +738,41 @@ function initBeforeAfterSlider() {
         handle.style.left = `${leftPercent}%`;
     }
 
+    function hideInstruction() {
+        if (!hasInteracted && instruction) {
+            hasInteracted = true;
+            instruction.style.opacity = '0';
+            instruction.style.transform = 'translate(-50%, -50%) scale(0.8)';
+            setTimeout(() => {
+                instruction.style.display = 'none';
+            }, 300);
+        }
+    }
+
     // Initialize
     setClip(slider.value);
 
-    slider.addEventListener('input', () => setClip(slider.value));
+    slider.addEventListener('input', () => {
+        setClip(slider.value);
+        hideInstruction();
+    });
 
     // Dragging on the image area
     let isDragging = false;
-    container.addEventListener('mousedown', (e) => { isDragging = true; updateFromEvent(e); });
+    container.addEventListener('mousedown', (e) => { 
+        isDragging = true; 
+        updateFromEvent(e);
+        hideInstruction();
+    });
     container.addEventListener('mousemove', (e) => { if (isDragging) updateFromEvent(e); });
     container.addEventListener('mouseup', () => isDragging = false);
     container.addEventListener('mouseleave', () => isDragging = false);
 
     // Touch support
-    container.addEventListener('touchstart', (e) => { updateFromEvent(e.touches[0]); });
+    container.addEventListener('touchstart', (e) => { 
+        updateFromEvent(e.touches[0]);
+        hideInstruction();
+    });
     container.addEventListener('touchmove', (e) => { updateFromEvent(e.touches[0]); });
 
     function updateFromEvent(e) {
@@ -758,6 +782,14 @@ function initBeforeAfterSlider() {
         slider.value = percent;
         setClip(percent);
     }
+
+    // Auto-hide instruction after 4 seconds
+    setTimeout(() => {
+        if (!hasInteracted && instruction) {
+            instruction.style.opacity = '0';
+            instruction.style.transform = 'translate(-50%, -50%) scale(0.8)';
+        }
+    }, 4000);
 }
 
 function handleSwipe() {
