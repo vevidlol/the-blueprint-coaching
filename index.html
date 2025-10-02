@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Blueprint Coaching | Transform Your Potential</title>
+    <meta name="description" content="Transform your physique and mindset with The Blueprint Coaching's proven system. No shortcuts. No excuses. Just results.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <meta property="og:title" content="The Blueprint Coaching - Transform Your Potential">
+    <meta property="og:description" content="Transform your physique and mindset with proven coaching system.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <span class="logo-text">THE BLUEPRINT</span>
+                <span class="logo-subtitle">COACHING</span>
+            </div>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">THE BLUEPRINT</span>
+                <span class="logo-subtitle">COACHING</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#coaching">Coaching</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="cta-button">Book Call</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="images/IMG_4380.jpg" alt="Transformation" class="hero-bg-image">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-subtitle">Elite 1-on-1 Coaching Available</p>
+                <h1 class="hero-title">
+                    TRANSFORM YOUR<br>
+                    <span class="highlight">POTENTIAL</span><br>
+                    WITH THE<br>
+                    <span class="highlight">BLUEPRINT</span>
+                </h1>
+                <p class="hero-description">
+                    No shortcuts. No excuses. Just a proven system that unlocks your genetic potential 
+                    through discipline, structure, and relentless progress.
+                </p>
+                <a href="#contact" class="hero-cta"><i class="fas fa-rocket"></i> START YOUR TRANSFORMATION</a>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-label">Clients Transformed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="95">0</span>
+                        <span class="stat-label">Success Rate %</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="section-header">
+                        <span class="section-subtitle">About Your Coach</span>
+                        <h2 class="section-title">THE BLUEPRINT STORY</h2>
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            Growing up, challenges always seemed out of my control. I found reasons in genetics and 
+                            environment for every setback. But everything changed at 17 when I realized ownership was 
+                            the key to transformation.
+                        </p>
+                        <p>
+                            From that point forward, I made a promise: no more excuses, just relentless progress. 
+                            Three years later, real results prove what drive and structure can achieve.
+                        </p>
+                        <p>
+                            Strength isn't just physical for me, it's rooted in honesty and a no-nonsense approach. 
+                            I won't pretend to know what I don't. By dialing in nutrition, discipline, and absolute effort, 
+                            I unlocked my genetic potential.
+                        </p>
+                        <p class="mission-statement">
+                            Now, with THE BLUEPRINT COACHING, it's time to share the formula for true change. 
+                            Let's build strength, resilience, and results. One blueprint at a time.
+                        </p>
+                    </div>
+                </div>
+                <div class="about-images">
+                    <div class="image-stack">
+                        <img src="images/IMG_4693.png" alt="Coach Transformation" class="about-image primary gallery-trigger" onclick="openGallery(0)">
+                        <img src="images/IMG_4834.png" alt="Training Session" class="about-image secondary gallery-trigger" onclick="openGallery(1)">
+                        <div class="gallery-hint">
+                            <i class="fas fa-expand"></i>
+                            <span>Click to view gallery</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaching Program Section -->
+    <section id="coaching" class="coaching">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Complete Transformation System</span>
+                <h2 class="section-title">THE BLUEPRINT METHOD</h2>
+                <p class="section-description">
+                    This isn't just another fitness program. It's a complete system designed to transform 
+                    your body, mind, and life through proven principles and relentless accountability.
+                </p>
+            </div>
+            <div class="coaching-features">
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3>Custom Training Programs</h3>
+                    <p>Personalized workout plans designed for your specific goals, body type, and schedule.</p>
+                    <span class="included">Included</span>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Mindset Transformation</h3>
+                    <p>Mental conditioning to build unbreakable discipline and eliminate self-limiting beliefs.</p>
+                    <span class="included">Included</span>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>24/7 Direct Access</h3>
+                    <p>Text me anytime for motivation, guidance, or to crush through plateaus and obstacles.</p>
+                    <span class="included">Included</span>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Weekly Check-ins</h3>
+                    <p>Regular progress assessments and program adjustments to ensure maximum results.</p>
+                    <span class="included">Included</span>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-apple-alt"></i></div>
+                    <h3>Nutrition Blueprint</h3>
+                    <p>Simple, sustainable meal plans that fuel your workouts and accelerate transformation.</p>
+                    <span class="included">Included</span>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon"><i class="fas fa-tasks"></i></div>
+                    <h3>Accountability System</h3>
+                    <p>Complete tracking system with weekly photos, measurements, and performance metrics.</p>
+                    <span class="included">Included</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Journey Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">My Transformation Journey</span>
+                <h2 class="section-title">THE PROOF IS IN THE PROGRESS</h2>
+                <p class="section-description">From making excuses to taking ownership. This is my 3-year transformation journey that proves what's possible with the right blueprint.</p>
+            </div>
+            <div class="transformation-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-image">
+                        <img src="images/IMG_4693.png" alt="Transformation Beginning" class="transformation-photo">
+                        <div class="timeline-overlay">
+                            <span class="timeline-label">Starting Point</span>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>The Beginning</h3>
+                        <p>Where it all started - making excuses and blaming genetics for every setback.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-image">
+                        <img src="images/98CA2511-0A9C-45BB-B085-6EF0C478482E.jpg" alt="Transformation Progress" class="transformation-photo">
+                        <div class="timeline-overlay">
+                            <span class="timeline-label">The Breakthrough</span>
+                        </div>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Taking Ownership</h3>
+                        <p>The moment I realized that ownership was the key to transformation. No more excuses.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="transformation-quote">
+                <blockquote>
+                    "Three years later, real results prove what drive and structure can achieve. 
+                    This is the blueprint that changed everything."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Common Questions</span>
+                <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How is The Blueprint different from other programs?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The Blueprint focuses on complete transformation - not just physical, but mental. We emphasize ownership, discipline, and honest progress tracking. No false promises, just proven methods that work.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What's included in the coaching program?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You get custom training programs, nutrition blueprints, 24/7 access to your coach, weekly check-ins, mindset coaching, and a complete accountability system. Everything you need for transformation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>How long does it take to see results?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most clients see significant changes within 4-6 weeks when they follow the blueprint consistently. Real transformation takes 12-16 weeks, but the mindset shifts happen immediately.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Do I need gym experience to start?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No experience necessary. The Blueprint is designed for all levels. We start where you are and build from there with proper progression and technique focus.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>What's the investment for coaching?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Investment varies based on your goals and program length. We'll discuss pricing during your strategy call to find the best fit for your situation and commitment level.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <h3>Is there a guarantee?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I guarantee you'll get the tools, knowledge, and support needed for transformation. Your results depend on your commitment to following the blueprint consistently.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-main">
+                    <div class="section-header">
+                        <span class="section-subtitle">Ready to Transform?</span>
+                        <h2 class="section-title">START YOUR BLUEPRINT</h2>
+                        <p class="section-description">
+                            Book a free strategy call to discuss your goals and see if The Blueprint 
+                            coaching program is the right fit for your transformation journey.
+                        </p>
+                    </div>
+                    <div class="contact-buttons">
+                        <a href="https://calendly.com/nunopmanagement/health" class="cta-button primary" target="_blank">
+                            <i class="fas fa-calendar-check"></i> BOOK STRATEGY CALL
+                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeqLyqzCKH51d_WR-y-sFKJhsWgSS_c1hzYjXJ4AW9NBE0aVQ/viewform?usp=header" 
+                           class="cta-button secondary" target="_blank">
+                            <i class="fas fa-file-alt"></i> APPLY NOW
+                        </a>
+                    </div>
+                    <div class="call-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>30-minute strategy session</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>No sales pressure</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-video"></i>
+                            <span>Zoom call</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>THE BLUEPRINT</h3>
+                    <span>COACHING</span>
+                    <p>Transforming lives through proven systems, relentless accountability, and honest coaching.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/cashnunez_" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com/@cash.liftz" class="social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#coaching">Coaching Program</a></li>
+                            <li><a href="#testimonials">Success Stories</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Get In Touch</h4>
+                        <p><i class="fas fa-envelope"></i> hello@theblueprintcoaching.com</p>
+                        <p><i class="fas fa-clock"></i> Response within 24 hours</p>
+                        <p><i class="fas fa-calendar"></i> Available via booking only</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 The Blueprint Coaching. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Refund Policy</a>
+                    </div>
+                </div>
+                <p class="disclaimer">
+                    Results not typical. Individual results may vary. Consult your physician before beginning any exercise program.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Image Gallery Modal -->
+    <div id="gallery-modal" class="gallery-modal">
+        <div class="gallery-backdrop" onclick="closeGallery()"></div>
+        <div class="gallery-container">
+            <button class="gallery-close" onclick="closeGallery()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="gallery-content">
+                <div class="gallery-main">
+                    <img id="gallery-main-image" src="" alt="Gallery Image" class="gallery-image">
+                    <button class="gallery-nav prev" onclick="previousImage()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="gallery-nav next" onclick="nextImage()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="gallery-thumbnails">
+                    <div class="thumbnail active" onclick="showImage(0)">
+                        <img src="images/IMG_4693.png" alt="Transformation 1">
+                    </div>
+                    <div class="thumbnail" onclick="showImage(1)">
+                        <img src="images/IMG_4834.png" alt="Transformation 2">
+                    </div>
+                    <div class="thumbnail" onclick="showImage(2)">
+                        <img src="images/IMG_4380.jpg" alt="Transformation 3">
+                    </div>
+                    <div class="thumbnail" onclick="showImage(3)">
+                        <img src="images/IMG_6041.png" alt="Transformation 4">
+                    </div>
+                    <div class="thumbnail" onclick="showImage(4)">
+                        <img src="images/98CA2511-0A9C-45BB-B085-6EF0C478482E.jpg" alt="Transformation 5">
+                    </div>
+                </div>
+                <div class="gallery-info">
+                    <h3 id="gallery-title">Transformation Journey</h3>
+                    <p id="gallery-description">Click through to see the complete transformation story</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
