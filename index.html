@@ -80,23 +80,21 @@
                     No shortcuts. No excuses. Just a proven system that unlocks your genetic potential 
                     through discipline, structure, and relentless progress.
                 </p>
-                <button class="mui-button mui-button-contained mui-button-large hero-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                    <i class="fas fa-rocket"></i> START YOUR TRANSFORMATION
-                </button>
+                <a href="#contact" class="hero-cta"><i class="fas fa-rocket"></i> START YOUR TRANSFORMATION</a>
                 <div class="hero-highlights">
-                    <div class="mui-card highlight-item">
+                    <div class="highlight-item">
                         <i class="fas fa-dumbbell"></i>
                         <span>3+ Years Training</span>
                     </div>
-                    <div class="mui-card highlight-item">
+                    <div class="highlight-item">
                         <i class="fas fa-brain"></i>
                         <span>Research-Based Approach</span>
                     </div>
-                    <div class="mui-card highlight-item">
+                    <div class="highlight-item">
                         <i class="fas fa-users"></i>
                         <span>Growing Community</span>
                     </div>
-                    <div class="mui-card highlight-item">
+                    <div class="highlight-item">
                         <i class="fas fa-heart"></i>
                         <span>Real Transformation</span>
                     </div>
@@ -159,41 +157,41 @@
                 </p>
             </div>
             <div class="coaching-features">
-                <div class="mui-card feature">
+                <div class="feature">
                     <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
                     <h3>Custom Training Programs</h3>
                     <p>Personalized workout plans designed for your specific goals, body type, and schedule.</p>
-                    <span class="mui-chip included">Included</span>
+                    <span class="included">Included</span>
                 </div>
-                <div class="mui-card feature">
+                <div class="feature">
                     <div class="feature-icon"><i class="fas fa-brain"></i></div>
                     <h3>Mindset Transformation</h3>
                     <p>Mental conditioning to build unbreakable discipline and eliminate self-limiting beliefs.</p>
-                    <span class="mui-chip included">Included</span>
+                    <span class="included">Included</span>
                 </div>
-                <div class="mui-card feature">
+                <div class="feature">
                     <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3>24/7 Direct Access</h3>
                     <p>Text me anytime for motivation, guidance, or to crush through plateaus and obstacles.</p>
-                    <span class="mui-chip included">Included</span>
+                    <span class="included">Included</span>
                 </div>
-                <div class="mui-card feature">
+                <div class="feature">
                     <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Weekly Check-ins</h3>
                     <p>Regular progress assessments and program adjustments to ensure maximum results.</p>
-                    <span class="mui-chip included">Included</span>
+                    <span class="included">Included</span>
                 </div>
-                <div class="mui-card feature">
+                <div class="feature">
                     <div class="feature-icon"><i class="fas fa-apple-alt"></i></div>
                     <h3>Nutrition Blueprint</h3>
                     <p>Simple, sustainable meal plans that fuel your workouts and accelerate transformation.</p>
-                    <span class="mui-chip included">Included</span>
+                    <span class="included">Included</span>
                 </div>
-                <div class="mui-card feature">
+                <div class="feature">
                     <div class="feature-icon"><i class="fas fa-tasks"></i></div>
                     <h3>Accountability System</h3>
                     <p>Complete tracking system with weekly photos, measurements, and performance metrics.</p>
-                    <span class="mui-chip included">Included</span>
+                    <span class="included">Included</span>
                 </div>
             </div>
         </div>
@@ -203,40 +201,33 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">My Transformation Journey</span>
-                <h2 class="section-title">THE PROOF IS IN THE PROGRESS</h2>
-                <p class="section-description">From making excuses to taking ownership. This is my 3-year transformation journey that proves what's possible with the right blueprint.</p>
+                <span class="section-subtitle">Client Case Study</span>
+                <h2 class="section-title">REAL CLIENT TRANSFORMATION</h2>
+                <p class="section-description">Swipe the slider to compare the before and after. This is a real client who followed the blueprint with consistency.</p>
             </div>
-            <div class="transformation-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-image">
-                        <img src="images/IMG_4693.png" alt="Transformation Beginning" class="transformation-photo">
-                        <div class="timeline-overlay">
-                            <span class="timeline-label">Starting Point</span>
-                        </div>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>The Beginning</h3>
-                        <p>Where it all started - making excuses and blaming genetics for every setback.</p>
+
+            <!-- Before / After Comparison -->
+            <div class="before-after-wrapper">
+                <div class="before-after" id="beforeAfter">
+                    <img src="images/starting.jpg" alt="Client Before" class="before-after-img before-img">
+                    <img src="images/ending.jpg" alt="Client After" class="before-after-img after-img">
+                    <div class="ba-label ba-before">Before</div>
+                    <div class="ba-label ba-after">After</div>
+                    <input type="range" min="0" max="100" value="50" class="ba-slider" id="baSlider" aria-label="Before after slider">
+                    <div class="ba-handle" id="baHandle">
+                        <span class="ba-dot"></span>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-image">
-                        <img src="images/98CA2511-0A9C-45BB-B085-6EF0C478482E.jpg" alt="Transformation Progress" class="transformation-photo">
-                        <div class="timeline-overlay">
-                            <span class="timeline-label">The Breakthrough</span>
-                        </div>
-                    </div>
-                    <div class="timeline-content">
-                        <h3>Taking Ownership</h3>
-                        <p>The moment I realized that ownership was the key to transformation. No more excuses.</p>
-                    </div>
-                </div>
+                <ul class="ba-notes">
+                    <li>12 weeks of structured training and nutrition</li>
+                    <li>Weekly check-ins and adjustments</li>
+                    <li>Mindset and habits coaching</li>
+                </ul>
             </div>
+
             <div class="transformation-quote">
                 <blockquote>
-                    "Three years later, real results prove what drive and structure can achieve. 
-                    This is the blueprint that changed everything."
+                    "No shortcuts. Just structure, discipline, and consistent execution. The results speak for themselves."
                 </blockquote>
             </div>
         </div>
@@ -434,10 +425,7 @@
                         <img src="images/98CA2511-0A9C-45BB-B085-6EF0C478482E.jpg" alt="Transformation 5">
                     </div>
                 </div>
-                <div class="gallery-info">
-                    <h3 id="gallery-title">Transformation Journey</h3>
-                    <p id="gallery-description">Click through to see the complete transformation story</p>
-                </div>
+
             </div>
         </div>
     </div>

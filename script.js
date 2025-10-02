@@ -39,6 +39,8 @@ function initializeTheme() {
     }
 }
 
+
+
 // Loading Screen
 window.addEventListener('load', function() {
     const loadingScreen = document.getElementById('loading-screen');
@@ -657,16 +659,10 @@ function showImage(index) {
     
     currentImageIndex = index;
     const mainImage = document.getElementById('gallery-main-image');
-    const title = document.getElementById('gallery-title');
-    const description = document.getElementById('gallery-description');
     
     // Update main image
     mainImage.src = galleryImages[index].src;
-    mainImage.alt = galleryImages[index].title;
-    
-    // Update info
-    title.textContent = galleryImages[index].title;
-    description.textContent = galleryImages[index].description;
+    mainImage.alt = `Gallery Image ${index + 1}`;
     
     // Update thumbnails
     document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
@@ -675,8 +671,7 @@ function showImage(index) {
     
     // Track image view
     trackEvent('gallery_image_viewed', {
-        image_index: index,
-        image_title: galleryImages[index].title
+        image_index: index
     });
 }
 
@@ -725,6 +720,46 @@ if (galleryModal) {
     });
 }
 
+// Before/After slider functionality
+function initBeforeAfterSlider() {
+    const container = document.getElementById('beforeAfter');
+    const slider = document.getElementById('baSlider');
+    const handle = document.getElementById('baHandle');
+    const afterImg = document.querySelector('.after-img');
+    if (!container || !slider || !handle || !afterImg) return;
+
+    function setClip(percent) {
+        // percent is 0..100; clip-path inset(top right bottom left)
+        const leftPercent = percent;
+        afterImg.style.clipPath = `inset(0 0 0 ${leftPercent}%)`;
+        handle.style.left = `${leftPercent}%`;
+    }
+
+    // Initialize
+    setClip(slider.value);
+
+    slider.addEventListener('input', () => setClip(slider.value));
+
+    // Dragging on the image area
+    let isDragging = false;
+    container.addEventListener('mousedown', (e) => { isDragging = true; updateFromEvent(e); });
+    container.addEventListener('mousemove', (e) => { if (isDragging) updateFromEvent(e); });
+    container.addEventListener('mouseup', () => isDragging = false);
+    container.addEventListener('mouseleave', () => isDragging = false);
+
+    // Touch support
+    container.addEventListener('touchstart', (e) => { updateFromEvent(e.touches[0]); });
+    container.addEventListener('touchmove', (e) => { updateFromEvent(e.touches[0]); });
+
+    function updateFromEvent(e) {
+        const rect = container.getBoundingClientRect();
+        let percent = ((e.clientX - rect.left) / rect.width) * 100;
+        percent = Math.max(0, Math.min(100, percent));
+        slider.value = percent;
+        setClip(percent);
+    }
+}
+
 function handleSwipe() {
     const swipeThreshold = 50;
     const diff = touchStartX - touchEndX;
@@ -747,6 +782,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add any additional initialization here
     initializeAnimations();
+
+    // Initialize before/after slider
+    initBeforeAfterSlider();
     
     // Preload critical images
     const criticalImages = [
@@ -754,7 +792,9 @@ document.addEventListener('DOMContentLoaded', function() {
         'images/IMG_4693.png',
         'images/IMG_4834.png',
         'images/IMG_6041.png',
-        'images/98CA2511-0A9C-45BB-B085-6EF0C478482E.jpg'
+        'images/98CA2511-0A9C-45BB-B085-6EF0C478482E.jpg',
+        'images/starting.jpg',
+        'images/ending.jpg'
     ];
     
     criticalImages.forEach(src => {
