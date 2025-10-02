@@ -6,9 +6,12 @@
     <title>The Blueprint Coaching | Transform Your Potential</title>
     <meta name="description" content="Transform your physique and mindset with The Blueprint Coaching's proven system. No shortcuts. No excuses. Just results.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css">
+    <!-- Material-UI CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="styles.css">
     <meta property="og:title" content="The Blueprint Coaching - Transform Your Potential">
     <meta property="og:description" content="Transform your physique and mindset with proven coaching system.">
     <meta property="og:type" content="website">
@@ -26,6 +29,11 @@
         </div>
     </div>
 
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -38,7 +46,12 @@
                 <li><a href="#coaching">Coaching</a></li>
                 <li><a href="#testimonials">Success Stories</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#contact" class="cta-button">Book Call</a></li>
+                <li>
+                    <button id="theme-toggle" class="mui-icon-button theme-toggle" onclick="toggleTheme()" title="Toggle theme">
+                        <i class="fas fa-sun" id="theme-icon"></i>
+                    </button>
+                </li>
+                <li><button class="mui-button mui-button-contained mui-button-primary cta-button">Book Call</button></li>
             </ul>
             <div class="hamburger" onclick="toggleMobileMenu()">
                 <span></span>
@@ -67,7 +80,27 @@
                     No shortcuts. No excuses. Just a proven system that unlocks your genetic potential 
                     through discipline, structure, and relentless progress.
                 </p>
-                <a href="#contact" class="hero-cta"><i class="fas fa-rocket"></i> START YOUR TRANSFORMATION</a>
+                <button class="mui-button mui-button-contained mui-button-large hero-cta" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fas fa-rocket"></i> START YOUR TRANSFORMATION
+                </button>
+                <div class="hero-highlights">
+                    <div class="mui-card highlight-item">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>3+ Years Training</span>
+                    </div>
+                    <div class="mui-card highlight-item">
+                        <i class="fas fa-brain"></i>
+                        <span>Research-Based Approach</span>
+                    </div>
+                    <div class="mui-card highlight-item">
+                        <i class="fas fa-users"></i>
+                        <span>Growing Community</span>
+                    </div>
+                    <div class="mui-card highlight-item">
+                        <i class="fas fa-heart"></i>
+                        <span>Real Transformation</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -126,41 +159,41 @@
                 </p>
             </div>
             <div class="coaching-features">
-                <div class="feature">
+                <div class="mui-card feature">
                     <div class="feature-icon"><i class="fas fa-dumbbell"></i></div>
                     <h3>Custom Training Programs</h3>
                     <p>Personalized workout plans designed for your specific goals, body type, and schedule.</p>
-                    <span class="included">Included</span>
+                    <span class="mui-chip included">Included</span>
                 </div>
-                <div class="feature">
+                <div class="mui-card feature">
                     <div class="feature-icon"><i class="fas fa-brain"></i></div>
                     <h3>Mindset Transformation</h3>
                     <p>Mental conditioning to build unbreakable discipline and eliminate self-limiting beliefs.</p>
-                    <span class="included">Included</span>
+                    <span class="mui-chip included">Included</span>
                 </div>
-                <div class="feature">
+                <div class="mui-card feature">
                     <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3>24/7 Direct Access</h3>
                     <p>Text me anytime for motivation, guidance, or to crush through plateaus and obstacles.</p>
-                    <span class="included">Included</span>
+                    <span class="mui-chip included">Included</span>
                 </div>
-                <div class="feature">
+                <div class="mui-card feature">
                     <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Weekly Check-ins</h3>
                     <p>Regular progress assessments and program adjustments to ensure maximum results.</p>
-                    <span class="included">Included</span>
+                    <span class="mui-chip included">Included</span>
                 </div>
-                <div class="feature">
+                <div class="mui-card feature">
                     <div class="feature-icon"><i class="fas fa-apple-alt"></i></div>
                     <h3>Nutrition Blueprint</h3>
                     <p>Simple, sustainable meal plans that fuel your workouts and accelerate transformation.</p>
-                    <span class="included">Included</span>
+                    <span class="mui-chip included">Included</span>
                 </div>
-                <div class="feature">
+                <div class="mui-card feature">
                     <div class="feature-icon"><i class="fas fa-tasks"></i></div>
                     <h3>Accountability System</h3>
                     <p>Complete tracking system with weekly photos, measurements, and performance metrics.</p>
-                    <span class="included">Included</span>
+                    <span class="mui-chip included">Included</span>
                 </div>
             </div>
         </div>
@@ -289,13 +322,12 @@
                         </p>
                     </div>
                     <div class="contact-buttons">
-                        <a href="https://calendly.com/cashnunez" class="cta-button primary" target="_blank">
+                        <button class="mui-button mui-button-contained mui-button-large cta-button primary" onclick="window.open('https://calendly.com/cashnunez', '_blank')">
                             <i class="fas fa-calendar-check"></i> BOOK STRATEGY CALL
-                        </a>
-                        <a href="https://forms.gle/upFbVivnjwgBoxoR8" 
-                           class="cta-button secondary" target="_blank">
+                        </button>
+                        <button class="mui-button mui-button-outlined mui-button-large cta-button secondary" onclick="window.open('https://forms.gle/upFbVivnjwgBoxoR8', '_blank')">
                             <i class="fas fa-file-alt"></i> APPLY NOW
-                        </a>
+                        </button>
                     </div>
                     <div class="call-details">
                         <div class="detail-item">
@@ -364,7 +396,7 @@
     </footer>
 
     <!-- Scroll to Top Button -->
-    <button id="scroll-to-top" class="scroll-to-top" onclick="scrollToTop()">
+    <button id="scroll-to-top" class="mui-fab scroll-to-top" onclick="scrollToTop()">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -410,6 +442,12 @@
         </div>
     </div>
 
+    <!-- Material-UI JavaScript -->
+    <script src="https://unpkg.com/@mui/material@latest/umd/material-ui.development.js"></script>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>

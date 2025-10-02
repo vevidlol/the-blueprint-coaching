@@ -1,3 +1,44 @@
+// Theme Toggle Functionality
+function toggleTheme() {
+    const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
+    const isLightTheme = body.classList.contains('light-theme');
+    
+    if (isLightTheme) {
+        // Switch to dark theme
+        body.classList.remove('light-theme');
+        themeIcon.className = 'fas fa-sun';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        // Switch to light theme
+        body.classList.add('light-theme');
+        themeIcon.className = 'fas fa-moon';
+        localStorage.setItem('theme', 'light');
+    }
+    
+    // Track theme change event
+    trackEvent('theme_changed', {
+        new_theme: isLightTheme ? 'dark' : 'light',
+        page_location: window.location.href
+    });
+}
+
+// Initialize theme on page load
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
+    
+    // Check for saved theme preference or default to dark
+    if (savedTheme === 'light') {
+        body.classList.add('light-theme');
+        themeIcon.className = 'fas fa-moon';
+    } else {
+        body.classList.remove('light-theme');
+        themeIcon.className = 'fas fa-sun';
+    }
+}
+
 // Loading Screen
 window.addEventListener('load', function() {
     const loadingScreen = document.getElementById('loading-screen');
@@ -45,10 +86,147 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Scroll Progress Bar
+function updateScrollProgress() {
+    const scrollProgress = document.getElementById('scroll-progress');
+    const progressContainer = document.querySelector('.scroll-progress-container');
+    
+    if (!scrollProgress || !progressContainer) return;
+    
+    const scrollTop = window.pageYOffset;
+    const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercentage = (scrollTop / documentHeight) * 100;
+    
+    // Update progress bar width
+    scrollProgress.style.width = Math.min(scrollPercentage, 100) + '%';
+    
+    // Hide progress bar when at very top
+    if (scrollTop < 50) {
+        progressContainer.classList.add('hidden');
+    } else {
+        progressContainer.classList.remove('hidden');
+    }
+    
+    // Update active section indicator
+    updateActiveSectionIndicator(scrollPercentage);
+}
+
+// Update active section based on scroll progress
+function updateActiveSectionIndicator(scrollPercentage) {
+    const sections = ['hero', 'about', 'coaching', 'testimonials', 'faq', 'contact'];
+    const progressBar = document.getElementById('scroll-progress');
+    
+    if (!progressBar) return;
+    
+    // Determine current section based on scroll percentage
+    let currentSection = 'hero';
+    if (scrollPercentage > 80) currentSection = 'contact';
+    else if (scrollPercentage > 65) currentSection = 'faq';
+    else if (scrollPercentage > 50) currentSection = 'testimonials';
+    else if (scrollPercentage > 35) currentSection = 'coaching';
+    else if (scrollPercentage > 15) currentSection = 'about';
+    
+    // Add section class to progress bar for potential styling
+    progressBar.className = 'scroll-progress-bar section-' + currentSection;
+    
+    // Check for milestone achievements
+    checkScrollMilestones(scrollPercentage, progressBar);
+    
+    // Track section progress for analytics
+    if (window.lastTrackedSection !== currentSection) {
+        trackEvent('section_progress', {
+            section: currentSection,
+            scroll_percentage: Math.round(scrollPercentage),
+            page_location: window.location.href
+        });
+        window.lastTrackedSection = currentSection;
+    }
+}
+
+// Check and trigger milestone effects
+function checkScrollMilestones(scrollPercentage, progressBar) {
+    const milestones = [25, 50, 75, 100];
+    const roundedPercentage = Math.floor(scrollPercentage);
+    
+    if (!window.achievedMilestones) {
+        window.achievedMilestones = new Set();
+    }
+    
+    milestones.forEach(milestone => {
+        if (roundedPercentage >= milestone && !window.achievedMilestones.has(milestone)) {
+            // Add milestone achievement
+            window.achievedMilestones.add(milestone);
+            
+            // Trigger pulse animation
+            progressBar.classList.add('milestone');
+            setTimeout(() => {
+                progressBar.classList.remove('milestone');
+            }, 600);
+            
+            // Track milestone achievement
+            trackEvent('scroll_milestone', {
+                milestone: milestone,
+                page_location: window.location.href
+            });
+            
+            // Optional: Show milestone notification
+            if (milestone === 100) {
+                showMilestoneNotification('🎉 You\'ve reached the end!');
+            }
+        }
+    });
+}
+
+// Show milestone notification (optional)
+function showMilestoneNotification(message) {
+    // Create a simple toast notification
+    const notification = document.createElement('div');
+    notification.className = 'milestone-notification';
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        background: linear-gradient(135deg, #ff6b35, #f7931e);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 14px;
+        z-index: 10001;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.opacity = '1';
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Animate out and remove
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}
+
 // Navbar scroll effect
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     const scrollTop = window.pageYOffset;
+    
+    // Update scroll progress
+    updateScrollProgress();
     
     if (scrollTop > 100) {
         navbar.classList.add('scrolled');
@@ -364,6 +542,20 @@ function debounce(func, wait) {
     };
 }
 
+// Throttled scroll handler for progress bar performance
+let scrollTimeout;
+function throttledScrollUpdate() {
+    if (!scrollTimeout) {
+        scrollTimeout = requestAnimationFrame(() => {
+            updateScrollProgress();
+            scrollTimeout = null;
+        });
+    }
+}
+
+// Additional scroll listener for smooth progress updates
+window.addEventListener('scroll', throttledScrollUpdate, { passive: true });
+
 // Debounced scroll handler for performance
 const debouncedScrollHandler = debounce(() => {
     // Additional scroll-based functionality can go here
@@ -545,6 +737,9 @@ function handleSwipe() {
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     console.log('The Blueprint Coaching website loaded successfully');
+    
+    // Initialize theme
+    initializeTheme();
     
     // Add any additional initialization here
     initializeAnimations();

@@ -1,3 +1,328 @@
+/* Material-UI Integration */
+.mui-button {
+    font-family: 'Inter', 'Roboto', sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    border-radius: 25px !important;
+    padding: 0.7rem 1.5rem !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+.mui-button-contained {
+    background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
+    color: #fff !important;
+}
+
+.mui-button-contained:hover {
+    background: linear-gradient(135deg, #f7931e, #ff6b35) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3) !important;
+}
+
+.mui-button-outlined {
+    background: transparent !important;
+    border: 2px solid #ff6b35 !important;
+    color: #ff6b35 !important;
+}
+
+.mui-button-outlined:hover {
+    background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
+    color: #fff !important;
+    border-color: #ff6b35 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3) !important;
+}
+
+.mui-button-large {
+    padding: 1rem 2rem !important;
+    font-size: 1.1rem !important;
+}
+
+.mui-button-primary {
+    background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
+    color: #fff !important;
+}
+
+/* Material-UI Card Styling */
+.mui-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 107, 53, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.mui-card:hover {
+    background: rgba(255, 107, 53, 0.1) !important;
+    border-color: #ff6b35 !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2) !important;
+}
+
+/* Material-UI Chip Styling */
+.mui-chip {
+    display: inline-block !important;
+    background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
+    color: #fff !important;
+    padding: 0.3rem 1rem !important;
+    border-radius: 20px !important;
+    font-size: 0.8rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    border: none !important;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.mui-chip:hover {
+    background: linear-gradient(135deg, #f7931e, #ff6b35) !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4) !important;
+}
+
+/* Material-UI Floating Action Button */
+.mui-fab {
+    position: fixed !important;
+    bottom: 2rem !important;
+    right: 2rem !important;
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
+    color: #fff !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.2rem !important;
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4) !important;
+    transition: all 0.3s ease !important;
+    z-index: 1000 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.mui-fab.visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.mui-fab:hover {
+    background: linear-gradient(135deg, #f7931e, #ff6b35) !important;
+    transform: translateY(-3px) scale(1.1) !important;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5) !important;
+}
+
+/* Material-UI Icon Button */
+.mui-icon-button {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 107, 53, 0.1) !important;
+    border: 1px solid rgba(255, 107, 53, 0.3) !important;
+    color: #ff6b35 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.mui-icon-button:hover {
+    background: rgba(255, 107, 53, 0.2) !important;
+    border-color: #ff6b35 !important;
+    transform: scale(1.1) !important;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3) !important;
+}
+
+/* Theme Toggle Specific Styles */
+.theme-toggle {
+    margin-right: 1rem !important;
+}
+
+.theme-toggle i {
+    transition: transform 0.3s ease !important;
+}
+
+.theme-toggle:hover i {
+    transform: rotate(180deg) !important;
+}
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 10000;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #ff6b35, #f7931e, #ff6b35);
+    background-size: 200% 100%;
+    animation: progressGradient 3s ease-in-out infinite;
+    transition: width 0.1s ease-out;
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+    position: relative;
+}
+
+.scroll-progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3));
+    animation: progressShine 2s ease-in-out infinite;
+}
+
+/* Light theme progress bar */
+body.light-theme .scroll-progress-container {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .scroll-progress-bar {
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.3);
+}
+
+/* Progress bar animations */
+@keyframes progressGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes progressShine {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}
+
+/* Hide progress bar when at top */
+.scroll-progress-container.hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+/* Section-specific progress bar colors */
+.scroll-progress-bar.section-hero {
+    background: linear-gradient(90deg, #ff6b35, #f7931e, #ff6b35);
+}
+
+.scroll-progress-bar.section-about {
+    background: linear-gradient(90deg, #ff6b35, #ff8c42, #ff6b35);
+}
+
+.scroll-progress-bar.section-coaching {
+    background: linear-gradient(90deg, #f7931e, #ff6b35, #f7931e);
+}
+
+.scroll-progress-bar.section-testimonials {
+    background: linear-gradient(90deg, #ff8c42, #ff6b35, #ff8c42);
+}
+
+.scroll-progress-bar.section-faq {
+    background: linear-gradient(90deg, #ff6b35, #f7931e, #ff6b35);
+}
+
+.scroll-progress-bar.section-contact {
+    background: linear-gradient(90deg, #f7931e, #ff8c42, #f7931e);
+}
+
+/* Progress bar pulse effect when reaching milestones */
+.scroll-progress-bar.milestone {
+    animation: progressPulse 0.6s ease-in-out;
+}
+
+@keyframes progressPulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+        transform: scaleY(1);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
+        transform: scaleY(1.5);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+        transform: scaleY(1);
+    }
+}
+
+/* Mobile progress bar adjustments */
+@media (max-width: 768px) {
+    .scroll-progress-container {
+        height: 3px;
+    }
+    
+    .scroll-progress-bar {
+        box-shadow: 0 0 8px rgba(255, 107, 53, 0.4);
+    }
+}
+
+/* Theme Variables */
+:root {
+    /* Dark Theme (Default) */
+    --bg-primary: #000;
+    --bg-secondary: #111;
+    --bg-tertiary: #1a1a1a;
+    --text-primary: #fff;
+    --text-secondary: #ccc;
+    --text-muted: #888;
+    --border-color: #333;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 107, 53, 0.2);
+    --overlay-bg: rgba(0, 0, 0, 0.85);
+}
+
+/* Light Theme */
+body.light-theme {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    --text-muted: #6c757d;
+    --border-color: #dee2e6;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-border: rgba(255, 107, 53, 0.3);
+    --overlay-bg: rgba(255, 255, 255, 0.85);
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -8,9 +333,10 @@
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #000;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
     overflow-x: hidden;
+    transition: all 0.3s ease;
 }
 
 /* Custom Scrollbar */
@@ -210,16 +536,18 @@ textarea::-webkit-scrollbar-thumb:hover {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: var(--overlay-bg);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 1rem 0;
     transition: all 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar.scrolled {
-    background: rgba(0, 0, 0, 0.98);
+    background: var(--overlay-bg);
     padding: 0.5rem 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .nav-container {
@@ -240,7 +568,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 .logo-text {
     font-size: 1.3rem;
     font-weight: 900;
-    color: #fff;
+    color: var(--text-primary);
     letter-spacing: 2px;
 }
 
@@ -259,7 +587,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .nav-menu a {
-    color: #fff;
+    color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -464,6 +792,50 @@ textarea::-webkit-scrollbar-thumb:hover {
     font-size: 1rem;
 }
 
+.hero-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 1s forwards;
+    flex-wrap: wrap;
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(255, 107, 53, 0.1);
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.highlight-item:hover {
+    background: rgba(255, 107, 53, 0.2);
+    border-color: #ff6b35;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.2);
+}
+
+.highlight-item i {
+    font-size: 1.5rem;
+    color: #ff6b35;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-item span {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}
+
 .hero-stats {
     display: flex;
     justify-content: center;
@@ -510,13 +882,13 @@ textarea::-webkit-scrollbar-thumb:hover {
 .section-title {
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 900;
-    color: #fff;
+    color: var(--text-primary);
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
 .section-description {
-    color: #ccc;
+    color: var(--text-secondary);
     font-size: 1.1rem;
     line-height: 1.7;
     max-width: 700px;
@@ -526,7 +898,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 /* About Section */
 .about {
     padding: 6rem 0;
-    background: #111;
+    background: var(--bg-secondary);
 }
 
 .about-grid {
@@ -547,18 +919,19 @@ textarea::-webkit-scrollbar-thumb:hover {
 
 .about-text p {
     font-size: 1.1rem;
-    color: #ccc;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     line-height: 1.8;
 }
 
 .mission-statement {
-    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    background: var(--bg-tertiary);
     padding: 1.5rem;
     border-radius: 10px;
     border-left: 4px solid #ff6b35;
     font-weight: 600;
-    color: #fff !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color);
 }
 
 .about-images {
@@ -633,7 +1006,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 /* Coaching Section */
 .coaching {
     padding: 6rem 0;
-    background: #000;
+    background: var(--bg-primary);
 }
 
 .coaching-features {
@@ -644,11 +1017,11 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .feature {
-    background: #1a1a1a;
+    background: var(--bg-tertiary);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -695,14 +1068,14 @@ textarea::-webkit-scrollbar-thumb:hover {
 }
 
 .feature h3 {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
 .feature p {
-    color: #ccc;
+    color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -1353,6 +1726,24 @@ textarea::-webkit-scrollbar-thumb:hover {
     
     .hamburger {
         display: flex;
+    }
+    
+    .hero-highlights {
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+    
+    .highlight-item {
+        min-width: 120px;
+        padding: 0.8rem;
+    }
+    
+    .highlight-item i {
+        font-size: 1.3rem;
+    }
+    
+    .highlight-item span {
+        font-size: 0.8rem;
     }
     
     .hero-stats {
